@@ -1,0 +1,145 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Hot",
+	"patterns": [
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#elementstringblock"
+		},
+		{
+			"include": "#stringblock"
+		},
+		{
+			"include": "#string"
+		},
+		{
+			"include": "#method"
+		},
+		{
+			"include": "#element"
+		},
+		{
+			"include": "#comment"
+		}
+	],
+	"repository": {
+		"comment": {
+			"patterns":[
+				{
+					"name": "comment.hot",
+					"match": "# .*$"	
+				},
+				{
+					"name": "comment.block.hot",
+					"begin": "^(\t*)###",
+					"end": "^(?!\\1\t)"
+				}
+			]
+		},
+		"element": {
+			"name": "entity.element.hot",
+			"begin": "([a-zA-Z][a-zA-Z0-9-]*)",
+			"beginCaptures": {
+				"1": {
+					"name": "entity.name.tag.hot"
+				}
+			},
+			"end": "(\\s|:)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.hot"
+				}
+			},
+			"patterns": [
+				{
+					"name": "entity.name.class.hot",
+					"match": "\\.([a-zA-Z][a-zA-Z0-9-]*)"
+				},
+				{
+					"name": "entity.name.id.hot",
+					"match": "#([a-zA-Z][a-zA-Z0-9-]*)"
+				},
+				{ "include": "#attributes" }
+			]
+		},
+		"method": {
+			"name": "entity.function.hot",
+			"begin": "(![a-zA-Z][a-zA-Z0-9-]*)",
+			"beginCaptures": {
+				"1": {
+					"name": "entity.name.function.hot"
+				}
+			},
+			"end": "(\\s|:)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.hot"
+				}
+			},
+			"patterns": [
+				{
+					"name": "entity.name.class.hot",
+					"match": "\\.([a-zA-Z][a-zA-Z0-9-]*)"
+				},
+				{
+					"name": "entity.name.id.hot",
+					"match": "#([a-zA-Z][a-zA-Z0-9-]*)"
+				},
+				{ "include": "#attributes" }
+			]
+		},
+		"operators": {
+			"patterns": [{
+				"name": "punctuation.hot",
+				"match": "[(),<>*/+-]"
+			}]
+		},
+		"stringblock": {
+			"name": "string.quoted.double.hot",
+			"begin": "^(\t*)\"\"\"",
+			"end": "^(\"\"\"|(?!\\1\t))",
+			"patterns": [
+				{
+					"name": "constant.character.escape.hot",
+					"match": "\\\\."
+				}
+			]
+		},
+		"string": {
+			"name": "string.quoted.double.hot",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.hot",
+					"match": "\\\\."
+				}
+			]
+		},
+		"attributes": {
+			"begin": "(\\[)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.attributes.open.hot"
+				}
+			},
+			"end": "(\\])",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.attributes.close.hot"
+				}
+			}, 
+			"patterns": [
+				{ "include": "#string" },
+				{ "include": "#operators" },
+				{
+					"name": "entity.attribute-name.hot",
+					"match": "([a-zA-Z][a-zA-Z0-9-]*)([:;]|(?=\\s*\\]))"
+				}
+			]
+		}
+	},
+	"scopeName": "source.hot"
+}

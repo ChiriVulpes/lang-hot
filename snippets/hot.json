@@ -1,0 +1,18 @@
+{
+	"Block Comment": {
+		"prefix": "###",
+		"body": [
+			"###",
+			"\t${1:comment}"
+		],
+		"description": "Block Comment"
+	},
+	"Block String": {
+		"prefix": "\"\"\"",
+		"body": [
+			"\"\"\"",
+			"\t${1:text}"
+		],
+		"description": "Block String"
+	}
+}

@@ -1,0 +1,32 @@
+{
+    "name": "lang-hot",
+    "displayName": "lang-hot",
+    "description": "Language support for hot",
+    "version": "0.0.1",
+    "publisher": "aarilight",
+    "engines": {
+        "vscode": "^1.13.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "hot",
+            "aliases": ["Hot", "hot"],
+            "extensions": ["hot"],
+            "configuration": "./language.json"
+        }],
+        "grammars": [{
+            "language": "hot",
+            "scopeName": "source.hot",
+            "path": "./syntaxes/hot.json"
+        }],
+        "snippets": [
+            {
+                "language": "hot",
+                "path": "./snippets/hot.json"
+            }
+        ]
+    }
+}
