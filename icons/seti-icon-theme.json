@@ -1,0 +1,13 @@
+{
+	"iconDefinitions": {
+		"_hot_file": {
+			"iconPath": "../img/hot.svg"
+		}
+	},
+	"fileExtensions": {
+		"hot": "_hot_file"
+	},
+	"languageIds": {
+		"hot": "_hot_file"
+	}
+}

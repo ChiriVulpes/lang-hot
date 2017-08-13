@@ -28,5 +28,15 @@
                 "path": "./snippets/hot.json"
             }
         ]
+        /*
+        ,
+        "iconThemes": [
+            {
+                "id": "hot-seti",
+                "label": "Hot File Support for Seti",
+                "path": "./icons/seti-icon-theme.json"
+            }
+        ]
+        */
     }
 }
