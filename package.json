@@ -1,14 +1,19 @@
 {
     "name": "lang-hot",
     "displayName": "lang-hot",
-    "description": "Language support for hot",
+    "description": "Language support for HotLang",
     "version": "0.0.1",
-    "publisher": "aarilight",
+    "publisher": "Aarilight",
+	"icon": "img/icon.png",
     "engines": {
         "vscode": "^1.13.0"
     },
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/yuudaari/lang-hot.git"
+	},
     "categories": [
-        "Languages"
+        "Programming Languages"
     ],
     "contributes": {
         "languages": [{
@@ -28,15 +33,5 @@
                 "path": "./snippets/hot.json"
             }
         ]
-        /*
-        ,
-        "iconThemes": [
-            {
-                "id": "hot-seti",
-                "label": "Hot File Support for Seti",
-                "path": "./icons/seti-icon-theme.json"
-            }
-        ]
-        */
     }
 }
